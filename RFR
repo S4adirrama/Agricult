@@ -8,7 +8,6 @@ data = pd.read_csv('https://data.humdata.org/dataset/2b2a77fe-3fb9-4910-811f-f63
 target_column = 'target_column'
 feature_columns = ['feature1', 'feature2', 'feature3']
 
-
 X = data[year]
 y = data[temperature]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -26,9 +25,10 @@ r2 = r2_score(y_test, y_pred)
 print(f"Mean Squared Error: {mse:.2f}")
 print(f"R-squared: {r2:.2f}")
 
-# Plot the predicted vs. actual values
 plt.scatter(y_test, y_pred)
 plt.xlabel("Actual Values")
 plt.ylabel("Predicted Values")
 plt.title("Actual vs. Predicted Values")
 plt.show()
+
+
